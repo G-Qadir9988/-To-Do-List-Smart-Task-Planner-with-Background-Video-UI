@@ -1,0 +1,297 @@
+/* Root Theme */
+:root {
+  --dark-color: #222831;
+  --light-color: #FFAC41;
+  --text-color: #eeeeee;
+  --bg-color: #f5f7fa;
+}
+
+/* General Body */
+body {
+  background-color: var(--bg-color);
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: var(--dark-color);
+}
+
+/* Sidebar Styling */
+.sidebar {
+  background-color: var(--dark-color);
+  height: 100vh;
+  padding: 20px;
+  border-right: 2px solid var(--light-color);
+  overflow-y: auto;
+}
+
+.nav-link {
+  color: var(--text-color);
+  padding: 10px;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+}
+
+.nav-link:hover {
+  background-color: var(--light-color);
+  color: var(--dark-color);
+}
+
+.nav-link.active {
+  background-color: var(--light-color);
+  color: var(--dark-color);
+}
+
+/* Content Area */
+.content {
+  padding: 20px;
+  overflow-y: auto;
+  height: 100vh;
+  background-color: #ffffff;
+}
+
+/* Task Sections */
+.task-section {
+  display: none;
+}
+
+.task-section.active {
+  display: block;
+}
+
+.task-section h2 {
+  margin-top: 20px;
+  margin-bottom: 10px;
+  color: var(--dark-color);
+}
+
+/* Input Fields */
+input[type="text"],
+input[type="date"] {
+  font-size: 0.95rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 8px;
+}
+
+/* Buttons */
+button.btn {
+  font-size: 0.9rem;
+  font-weight: 500;
+  border-radius: 6px;
+  transition: background-color 0.2s ease;
+}
+
+.btn-primary {
+  background-color: var(--light-color);
+  border: none;
+  color: var(--dark-color);
+}
+
+.btn-primary:hover {
+  background-color: #e69a2c;
+  color: #111;
+}
+
+.btn-danger {
+  background-color: #dc3545;
+  border: none;
+}
+
+.btn-danger:hover {
+  background-color: #b02a37;
+}
+
+.btn-success {
+  background-color: #28a745;
+  border: none;
+}
+
+.btn-success:hover {
+  background-color: #218838;
+}
+
+.btn-secondary {
+  background-color: #6c757d;
+  border: none;
+}
+
+.btn-secondary:hover {
+  background-color: #5a6268;
+}
+
+/* Delete Column Button */
+.nav .btn-outline-danger {
+  padding: 2px 8px;
+  font-size: 0.8rem;
+  color: #ff4d4d;
+  border-color: #ff4d4d;
+}
+
+.nav .btn-outline-danger:hover {
+  background-color: #ff4d4d;
+  color: white;
+}
+
+/* Task List */
+.list-group-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 6px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  margin-bottom: 5px;
+  background-color: #ffffff;
+}
+
+.list-group-item span {
+  flex: 1;
+}
+
+/* Calendar */
+#calendar {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+/* Modal (Optional if used) */
+.modal-content {
+  border-radius: 10px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .sidebar {
+    height: auto;
+    border-bottom: 1px solid #dee2e6;
+    border-right: none;
+  }
+
+  .content {
+    padding-top: 10px;
+    height: auto;
+  }
+
+  .nav .d-flex {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .nav .btn-outline-danger {
+    margin-left: auto;
+  }
+}
+
+/* Background Video */
+.bg-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+  opacity: 0.25; /* adjust for visibility */
+  pointer-events: none; /* let clicks pass through */
+  border-radius: 8px;
+}
+
+/* Optional overlay for better text visibility */
+.video-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(245, 247, 250, 0.6); /* adjust brightness/contrast */
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Ensure content stays above video */
+/* My Day Section Full Height */
+/* My Day section full height */
+#my-day-section {
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+/* Video covers entire section */
+/* Task Sections with Video Support */
+.task-section {
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+  display: none;
+}
+
+.task-section.active {
+  display: block;
+}
+
+/* Background Video */
+.bg-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+  opacity: 0.95; /* Full visibility */
+  pointer-events: none;
+  border-radius: 0; /* Remove border radius for full section background */
+}
+
+/* Content over Video */
+.task-content {
+  position: relative;
+  z-index: 2;
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.1); /* Light white glass effect */
+  border-radius: 10px;
+  backdrop-filter: blur(2px); /* Optional blur */
+  color: var(--dark-color); /* Use your theme variable */
+}
+
+/* Optional: Hide the overlay completely */
+.video-overlay {
+  display: none;
+}
+
+/* General Delete Button for Tasks */
+.btn-delete-task {
+  background-color: #dc3545; /* Bootstrap danger */
+  color: #fff;
+  border: none;
+  padding: 5px 12px;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  transition: background-color 0.2s ease;
+}
+
+.btn-delete-task:hover {
+  background-color: #b02a37;
+  color: #fff;
+}
+
+/* Sidebar Column Delete Button */
+.btn-delete-column {
+  background-color: transparent;
+  color: #ff4d4d;
+  border: 1px solid #ff4d4d;
+  font-size: 0.8rem;
+  padding: 2px 8px;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+}
+
+.btn-delete-column:hover {
+  background-color: #ff4d4d;
+  color: white;
+  box-shadow: 0 0 5px rgba(255, 77, 77, 0.5);
+}

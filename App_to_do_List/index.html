@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Ghulam Qadir To-Do List</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-3 col-lg-2 sidebar">
+        <div class="nav flex-column">
+          <a class="nav-link active" href="#" data-section="my-day">My Day</a>
+          <a class="nav-link" href="#" data-section="important">Important</a>
+          <a class="nav-link" href="#" data-section="planned">Planned</a>
+          <a class="nav-link" href="#" data-section="calendar">Calendar</a>
+          <div class="search-container mt-3">
+            <input type="text" class="form-control" id="taskSearch" placeholder="Search tasks..." />
+          </div>
+          <button class="btn btn-primary mt-3" id="addColumnBtn">Add New Column</button>
+        </div>
+      </div>
+      <div class="col-md-9 col-lg-10 content">
+        <!-- My Day -->
+<!-- My Day -->
+<div class="task-section active position-relative" id="my-day-section">
+  <!-- Background video -->
+  <video autoplay loop muted playsinline class="bg-video">
+    <source src="videos/morning.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+
+  <!-- My Day Content -->
+  <div class="task-content">
+    <h2>My Day</h2>
+    <input type="text" class="form-control mb-2" id="myDayInput" placeholder="Add a task..." />
+    <button class="btn btn-primary mb-2" id="myDayAddBtn">Add</button>
+    <ul class="list-group" id="myDayList"></ul>
+  </div>
+</div>
+
+
+
+  <!-- Overlay (optional) -->
+  <div class="video-overlay"></div>
+
+
+        <!-- Important -->
+<div class="task-section position-relative" id="important-section">
+  <!-- Background video -->
+  <video autoplay loop muted playsinline class="bg-video">
+    <source src="videos/important.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+
+  <!-- Content -->
+  <div class="task-content">
+    <h2>Important</h2>
+    <input type="text" class="form-control mb-2" id="importantInput" placeholder="Add important task..." />
+    <button class="btn btn-danger mb-2" id="importantAddBtn">Add</button>
+    <ul class="list-group" id="importantList"></ul>
+  </div>
+</div>
+
+        <!-- Planned -->
+<div class="task-section position-relative" id="planned-section">
+  <!-- Background video -->
+  <video autoplay loop muted playsinline class="bg-video">
+    <source src="videos/planned.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+
+  <!-- Content -->
+  <div class="task-content">
+    <h2>Planned</h2>
+    <input type="text" class="form-control mb-2" id="plannedInput" placeholder="Task description..." />
+    <input type="date" class="form-control mb-2" id="plannedDate" />
+    <button class="btn btn-success mb-2" id="plannedAddBtn">Add Planned Task</button>
+    <ul class="list-group" id="plannedList"></ul>
+  </div>
+</div>
+
+        <!-- Calendar -->
+<div class="task-section position-relative" id="calendar-section">
+  <!-- Background video -->
+  <video autoplay loop muted playsinline class="bg-video">
+    <source src="videos/calendar.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+
+  <!-- Content -->
+  <div class="task-content">
+    <h2>Calendar</h2>
+    <input type="date" class="form-control mb-2" id="calendarDate" />
+    <input type="text" class="form-control mb-2" id="calendarTask" placeholder="Task on selected date..." />
+    <button class="btn btn-primary mb-2" id="calendarAddBtn">Add to Calendar</button>
+    <ul class="list-group" id="calendarTaskList"></ul>
+  </div>
+</div>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
